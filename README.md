@@ -20,3 +20,5 @@ My build of dwm
 [unfloatvisible](https://dwm.suckless.org/patches/unfloatvisible/)
 
 [hide vacant tags](https://dwm.suckless.org/patches/hide_vacant_tags/)
+
+[move stack](httcps://dwm.suckless.org/patches/movestack/)
