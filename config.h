@@ -31,6 +31,8 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "st-float",     NULL,       NULL,       0,            1,           -1 },
+	{ NULL,     "st-float",       NULL,       0,            1,           -1 },
 };
 
 /* window swallowing */
@@ -110,8 +112,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_y,                spawn,          SHCMD("st -e ytfzf -f -t -l -s") },
 	{ MODKEY|ShiftMask,             XK_y,                spawn,          SHCMD("st -e ytfzf -f -t -l -s -d") },
 	{ MODKEY,                       XK_n,                spawn,          SHCMD("st -e newsboat")},
-	{ MODKEY|ShiftMask,             XK_n,                spawn,          SHCMD("st -e ncmpcpp")},
-	{ MODKEY,                       XK_w,                spawn,          SHCMD("randwal") },
+	{ MODKEY|ShiftMask,             XK_n,                spawn,          SHCMD("st -n 'st-float' -g '100x20' -e ncmpcpp")},
+	{ MODKEY,                       XK_w,                spawn,          SHCMD("randwal")	},
 	{ MODKEY,                       XK_m,                spawn,          SHCMD("openranger ~/Media/") },
 	{ MODKEY,                       XK_c,                spawn,          SHCMD("st -e ranger ~/.config/") },
 	{ MODKEY,                       XK_bracketleft,      spawn,          SHCMD("pamixer -d 5") },
