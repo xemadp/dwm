@@ -24,3 +24,5 @@ My build of dwm
 [move stack](httcps://dwm.suckless.org/patches/movestack/)
 
 [setstaus](httcps://dwm.suckless.org/patches/setstatus/)
+
+[attachbottom](httcps://dwm.suckless.org/patches/attachbottom/)
