@@ -21,8 +21,8 @@ My build of dwm
 
 [hide vacant tags](https://dwm.suckless.org/patches/hide_vacant_tags/)
 
-[move stack](httcps://dwm.suckless.org/patches/movestack/)
+[move stack](https://dwm.suckless.org/patches/movestack/)
 
-[setstaus](httcps://dwm.suckless.org/patches/setstatus/)
+[setstaus](https://dwm.suckless.org/patches/setstatus/)
 
-[attachbottom](httcps://dwm.suckless.org/patches/attachbottom/)
+[attachbottom](https://dwm.suckless.org/patches/attachbottom/)
