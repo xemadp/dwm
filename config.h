@@ -108,11 +108,11 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,                spawn,          SHCMD("dmenu_run -c -l 10") },
 	{ MODKEY,                       XK_z,                spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_r,                spawn,          SHCMD("st -e ranger") },
+	{ MODKEY,                       XK_r,                spawn,          SHCMD("st -n 'st-float' -g '120x30' -e ranger") },
 	{ MODKEY,                       XK_y,                spawn,          SHCMD("st -e ytfzf -f -t -l -s") },
 	{ MODKEY|ShiftMask,             XK_y,                spawn,          SHCMD("st -e ytfzf -f -t -l -s -d") },
 	{ MODKEY,                       XK_n,                spawn,          SHCMD("st -e newsboat")},
-	{ MODKEY|ShiftMask,             XK_n,                spawn,          SHCMD("st -n 'st-float' -g '100x20' -e ncmpcpp")},
+	{ MODKEY|ShiftMask,             XK_n,                spawn,          SHCMD("st -n 'st-float' -g '120x30' -e ncmpcpp")},
 	{ MODKEY,                       XK_w,                spawn,          SHCMD("randwal")	},
 	{ MODKEY,                       XK_m,                spawn,          SHCMD("openranger ~/Media/") },
 	{ MODKEY,                       XK_c,                spawn,          SHCMD("st -e ranger ~/.config/") },
