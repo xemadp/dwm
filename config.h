@@ -85,24 +85,26 @@ static const char *termcmd[]  = { "st", NULL };
 
 
 /* Keybindigs 
- * Super + p                 : dmenu_run
- * Super + r                 : ranger
- * Super + z                 : Terminal ( st )
- * Super + y                 : ytfzf
- * Super + n                 : newsboat
- * Super + Shift + n         : ncmpcpp
- * Super + w                 : random wallpaper
- * Super + m                 : Open Media in ranger
- * Super + c                 : Open .configs
- * Super + [                 : lower volume (needs pamixer)
- * Super + ]                 : increase volume "
- * Super + comma             : prev song ( mpc )
- * Super + period            : next song ( mpc )
- * Super + Shift + p         : toggle song playing ( mpc )
- * Super + Shift + i         : increase floating window size by 10
- * Super + Shift + d         : decrease floating window size by 10
- * Printscreen key           : uses scrotcp (one of my scripts) to take a screenshot and also copy the image.
- * Super + Printscreen key   : uses scrotcp (one of my scripts) to take a screenshot(while letting interactive selection) and also copy the image.
+ * Super+p               : dmenu_run
+ * Super+r               : ranger (Floating)
+ * Super+z               : Terminal ( st ) (Floating)
+ * Super+y               : ytfzf
+ * Super+n               : newsboat
+ * Super+Shift+n         : ncmpcpp (Floating)
+ * Super+w               : random wallpaper
+ * Super+c               : Open .configs (Floating)
+ * Super+[               : lower volume (needs pamixer)
+ * Super+]               : increase volume "
+ * Super+comma           : prev song                               |
+ * Super+period          : next song                               |
+ * Super+Shift+p         : toggle song playing                     | managed by my mpcdunst script
+ * Super+Shift+s         : toggle mpd shuffle                      |        
+ * Super+Shift+i         : increase floating window size by 10             |
+ * Super+Shift+d         : decrease floating window size by 10             |
+ * Super+Shift+l         : increase floating window horizontal size by 10  | managed by my windowsresize script
+ * Super+Shift+h         : decrease floating window horizontal size by 10  |
+ * Printscreen           : take a screenshot and also copy the image into clipboard.            |
+ * Super+Printscreen     : take a screenshot(selection) and also copy the image into clipboard. | managed by my scrotcp script
  */
 
 #include "movestack.c"
@@ -116,7 +118,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_n,                spawn,          SHCMD("st -e newsboat")},
 	{ MODKEY|ShiftMask,             XK_n,                spawn,          SHCMD("st -n 'st-float' -g '120x30' -e ncmpcpp")},
 	{ MODKEY,                       XK_w,                spawn,          SHCMD("randwal")	},
-	{ MODKEY,                       XK_m,                spawn,          SHCMD("openranger ~/Media/") },
 	{ MODKEY,                       XK_c,                spawn,          SHCMD("st -e ranger ~/.config/") },
 	{ MODKEY,                       XK_bracketleft,      spawn,          SHCMD("pamixer -d 5") },
 	{ MODKEY,                       XK_bracketright,     spawn,          SHCMD("pamixer -i 5") },
@@ -126,13 +127,15 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_s,                spawn,          SHCMD("mpcdunst r") },
 	{ MODKEY|ShiftMask,             XK_i,                spawn,          SHCMD("windowresize i 10") },
 	{ MODKEY|ShiftMask,             XK_d,                spawn,          SHCMD("windowresize d 10") },
+	{ MODKEY|ShiftMask,             XK_l,                spawn,          SHCMD("windowresize ix 10") },
+	{ MODKEY|ShiftMask,             XK_h,                spawn,          SHCMD("windowresize dx 10") },
 	{ NULL,                         XK_Print,            spawn,          SHCMD("scrotcp") },
 	{ MODKEY,                       XK_Print,            spawn,          SHCMD("scrotcp -s") },
 	{ MODKEY,                       XK_b,                togglebar,      {0} },
 	{ MODKEY,                       XK_j,                focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                focusstack,     {.i = -1 } },
- 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
- 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
+ 	{ MODKEY|ShiftMask,             XK_j,								 movestack,      {.i = +1 } },
+ 	{ MODKEY|ShiftMask,             XK_k,								 movestack,      {.i = -1 } },
 	{ MODKEY,                       XK_i,                incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,                incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,                setmfact,       {.f = -0.005} },
