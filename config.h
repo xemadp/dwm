@@ -99,6 +99,8 @@ static const char *termcmd[]  = { "st", NULL };
  * Super + comma             : prev song ( mpc )
  * Super + period            : next song ( mpc )
  * Super + Shift + p         : toggle song playing ( mpc )
+ * Super + Shift + i         : increase floating window size by 10
+ * Super + Shift + d         : decrease floating window size by 10
  * Printscreen key           : uses scrotcp (one of my scripts) to take a screenshot and also copy the image.
  * Super + Printscreen key   : uses scrotcp (one of my scripts) to take a screenshot(while letting interactive selection) and also copy the image.
  */
@@ -122,6 +124,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period,           spawn,          SHCMD("mpc next") },
 	{ MODKEY|ShiftMask,             XK_p,                spawn,          SHCMD("mpcdunst t") },
 	{ MODKEY|ShiftMask,             XK_s,                spawn,          SHCMD("mpcdunst r") },
+	{ MODKEY|ShiftMask,             XK_i,                spawn,          SHCMD("windowresize i 10") },
+	{ MODKEY|ShiftMask,             XK_d,                spawn,          SHCMD("windowresize d 10") },
 	{ NULL,                         XK_Print,            spawn,          SHCMD("scrotcp") },
 	{ MODKEY,                       XK_Print,            spawn,          SHCMD("scrotcp -s") },
 	{ MODKEY,                       XK_b,                togglebar,      {0} },
